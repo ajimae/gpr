@@ -21,7 +21,7 @@ jobs:
           ls -al build
       - run: npm publish
       - run: |
-          rm build/.npmrc
+          # rm build/.npmrc
           ls -al build
         working-directory: ./dist
         env:
