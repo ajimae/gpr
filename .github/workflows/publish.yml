@@ -18,10 +18,7 @@ jobs:
       - run: |
           echo @lexacode:https://npm.pkg.github.com/ > build/.npmrc
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
-          ls -al build
       - run: npm publish
-      - run: rm -rf build/.npmrc
-      - run: ls -al build
         working-directory: ./build
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
