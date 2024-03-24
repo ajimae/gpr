@@ -16,9 +16,13 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: |
-          # echo @ajimae:https://npm.pkg.github.com/ > ~/.npmrc
-          # echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> ~/.npmrc
+          echo @ajimae:https://npm.pkg.github.com/ > build/.npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+          ls -al build
       - run: npm publish
-        # working-directory: ./dist
+      - run: |
+          rm build/.npmrc
+          ls -al build
+        working-directory: ./dist
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
