@@ -1,6 +1,6 @@
 {
-  "name": "@lexacode/package-example",
-  "version": "0.0.1",
+  "name": "@ajimae/package-example",
+  "version": "0.0.0",
   "description": "Example project for TypeScript packages",
   "main": "index.js",
   "scripts": {
